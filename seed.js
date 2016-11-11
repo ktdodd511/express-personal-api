@@ -13,3 +13,49 @@
 //   console.log("Created new campsite", campsite._id)
 //   process.exit(); // we're all done! Exit the program.
 // })
+
+var db = require('./models');
+
+var animeList= [
+  {
+  name: "One Piece"
+  image: "onepieceimg.jpeg",
+  dateReleased: "1999",
+  stillOnAir: true,
+  characters: [CharacterSchema]
+  }
+
+  {
+  name: "HunterXHunter"
+  image: "hunterxhunterimg.jpeg",
+  dateReleased: "2011",
+  stillOnAir: true,
+  characters: [CharacterSchema]
+  }
+
+  {
+  name: "Soul Eater"
+  image: "onepieceimg.jpeg",
+  dateReleased: "2008",
+  stillOnAir: false,
+  characters: [CharacterSchema]
+  }
+
+  {
+  name: "Sword Art Online"
+  image: "onepieceimg.jpeg",
+  dateReleased: "2012",
+  stillOnAir: false,
+  characters: [CharacterSchema]
+  }
+
+  {
+  name: "Deadman Wonderland"
+  image: "onepieceimg.jpeg",
+  dateReleased: "2011",
+  stillOnAir: false,
+  characters: [CharacterSchema]
+  }
+
+
+]
