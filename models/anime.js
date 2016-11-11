@@ -13,7 +13,7 @@ var animeSchema = new Schema ({
   dateReleased: String,
   stillOnAir: Boolean,
   characters: [CharacterSchema]
-}};
+});
 
 var Anime = mongoose.model('Anime', animeSchema);
 module.exports = Anime;

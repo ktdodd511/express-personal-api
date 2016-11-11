@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -45,14 +45,17 @@ app.get('/', function homepage(req, res) {
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
-    woopsIForgotToDocumentAllMyEndpoints: true, // CHANGE ME ;)
+    woopsIForgotToDocumentAllMyEndpoints: false,
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/ktdodd511/express_self_api/README.md", // CHANGE ME
-    baseUrl: "http://cryptic-lake-67320.herokuapp.com", // CHANGE ME
+    documentationUrl: "https://github.com/ktdodd511/express_self_api/README.md",
+    baseUrl: "http://cryptic-lake-67320.herokuapp.com",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Data about me"},
+      {method: "GET", path: "/api/anime", description: "Get all anime shows"},
+      {method: "GET", path: "/api/anime/:id", description: "Get an anime show by id"},
+      {method: "POST", path: "/api/anime", description: "Add more anime shows!"},
+      {method: "DELETE", path:"/api/anime/:id", description: "Delete a show"}
     ]
   })
 });
@@ -61,9 +64,65 @@ app.get('/api/profile', function profile(req, res) {
   res.json({
     name: "Katie",
     favoriteAnime: "HunterXHunter",
-    
+    livesIn: "Oakland",
+    hatesTrump: true,
+
   });
 });
+
+
+// get all the anime shows
+app.get('/api/anime', function(req, res) {
+  db.Anime.find(function(err, anime) {
+    if (err) {
+      return console.log("index error: " + err);
+    }
+    res.json(anime);
+  });
+});
+
+
+// get one show by id
+app.get('/api/anime/:id', function(req, res) {
+  db.Anime.findOne({
+    _id: req.params._id
+  }, function(err, data) {
+    res.json(data);
+  });
+});
+
+
+// create new anime show
+app.post('/api/anime', function(req, res) {
+  var anime = new db.Anime({
+    name: req.body.name,
+    image: req.body.image,
+    dateReleased: req.body.dateReleased,
+    stillOnAir: req.body.stillOnAir,
+  });
+
+  anime.save(function(err, anime) {
+    if (err) {
+      return console.log("save error: " + err);
+    }
+    console.log("saved ", anime.name)
+    res.json(anime);
+  });
+});
+
+
+// delete a show
+app.delete('/api/anime/:id', function(req, res) {
+  console.log("anime delete", req.params);
+  var animeId = req.params.id;
+  db.Anime.findOneAndRemove({
+    _id: animeId
+  }, function(err, deletedAnime) {
+    res.json(deletedAnime);
+  });
+});
+
+
 
 /**********
  * SERVER *

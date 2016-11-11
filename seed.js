@@ -18,44 +18,61 @@ var db = require('./models');
 
 var animeList= [
   {
-  name: "One Piece"
+  name: "One Piece",
   image: "onepieceimg.jpeg",
   dateReleased: "1999",
   stillOnAir: true,
-  characters: [CharacterSchema]
-  }
+  // characters: [CharacterSchema]
+},
 
   {
-  name: "HunterXHunter"
+  name: "HunterXHunter",
   image: "hunterxhunterimg.jpeg",
   dateReleased: "2011",
   stillOnAir: true,
-  characters: [CharacterSchema]
-  }
+  // characters: [CharacterSchema]
+},
 
   {
-  name: "Soul Eater"
+  name: "Soul Eater",
   image: "onepieceimg.jpeg",
   dateReleased: "2008",
   stillOnAir: false,
-  characters: [CharacterSchema]
-  }
+  // characters: [CharacterSchema]
+},
 
   {
-  name: "Sword Art Online"
+  name: "Sword Art Online",
   image: "onepieceimg.jpeg",
   dateReleased: "2012",
   stillOnAir: false,
-  characters: [CharacterSchema]
-  }
+  // characters: [CharacterSchema]
+},
 
   {
-  name: "Deadman Wonderland"
+  name: "Deadman Wonderland",
   image: "onepieceimg.jpeg",
   dateReleased: "2011",
   stillOnAir: false,
-  characters: [CharacterSchema]
+  // characters: [CharacterSchema]
   }
 
 
 ]
+
+
+animeList.forEach(function (data) {
+  var anime = new db.Anime({
+    name: data.name,
+    image: data.image,
+    dateReleased: data.dateReleased,
+    stillOnAir: data.stillOnAir,
+
+  });
+  anime.save(function(err, savedAnime){
+    if (err) {
+      return console.log(err);
+    }
+    console.log('saved ' + savedAnime.name);
+  });
+});
