@@ -1,6 +1,6 @@
 body {
   color: #333;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Indie Flower', cursive;
   background-color: rgb(255,239,213); /* Sanity Check! */
 }
 
@@ -16,10 +16,20 @@ h4 {
 
 #animeTarget {
   float: left;
-  margin-top: 40px;
+  margin-top: 60px;
   font-size: 30px;
 }
 
-.delete-btn {
+.pull-right {
   float: right;
+  color: black;
+  background-color: blue;
+  font-size: 15px;
+  border: 2px solid black;
+  
+}
+
+.form-control, .btn-default {
+  border: 2px solid black;
+
 }

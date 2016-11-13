@@ -19,7 +19,8 @@ var db = require('./models');
 var animeList= [
   {
   name: "One Piece",
-  image: "onepieceimg.jpeg",
+  image: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=imgres&cd=&cad=rja&uact=8&ved=0ahUKEwiSkqbTm6TQAhWov1QKHVosC-QQjRwIBw&url=http%3A%2F%2Fwww.op-base.me%2F&psig=AFQjCNEZ3ot7NAlOB82HFIgVqy4nDeypWA&ust=1479074399499531",
+  // image: "/images/onepieceimg.jpeg",
   dateReleased: "1999",
   stillOnAir: true,
   // characters: [CharacterSchema]
@@ -60,19 +61,21 @@ var animeList= [
 
 ]
 
+db.Anime.remove({}, function(err, Anime){
+  console.log('removed all shows');
+  animeList.forEach(function (data) {
+    var anime = new db.Anime({
+      name: data.name,
+      image: data.image,
+      dateReleased: data.dateReleased,
+      stillOnAir: data.stillOnAir,
 
-animeList.forEach(function (data) {
-  var anime = new db.Anime({
-    name: data.name,
-    image: data.image,
-    dateReleased: data.dateReleased,
-    stillOnAir: data.stillOnAir,
-
-  });
-  anime.save(function(err, savedAnime){
-    if (err) {
-      return console.log(err);
-    }
-    console.log('saved ' + savedAnime.name);
-  });
+    });
+    anime.save(function(err, savedAnime){
+      if (err) {
+        return console.log(err);
+      }
+      console.log('saved ' + savedAnime.name);
+    });
+});
 });
