@@ -1,14 +1,15 @@
 console.log("Sanity Check: JS is working!");
-
+var template;
+var $animeList;
 var allAnime = [];
 
 $(document).ready(function(){
 
-var $animeList = $('#animeTarget');
+$animeList = $('#animeTarget');
 
 // handlebars template
 var source = $('#anime-template').html();
-var template = Handlebars.compile(source);
+template = Handlebars.compile(source);
 
 $.ajax({
   method: 'GET',

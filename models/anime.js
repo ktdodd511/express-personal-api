@@ -12,7 +12,7 @@ var animeSchema = new Schema ({
   image: String,
   dateReleased: String,
   stillOnAir: Boolean,
-  characters: [CharacterSchema]
+  // characters: [CharacterSchema]
 });
 
 var Anime = mongoose.model('Anime', animeSchema);

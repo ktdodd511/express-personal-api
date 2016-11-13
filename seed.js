@@ -19,7 +19,7 @@ var db = require('./models');
 var animeList= [
   {
   name: "One Piece",
-  image: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=imgres&cd=&cad=rja&uact=8&ved=0ahUKEwiSkqbTm6TQAhWov1QKHVosC-QQjRwIBw&url=http%3A%2F%2Fwww.op-base.me%2F&psig=AFQjCNEZ3ot7NAlOB82HFIgVqy4nDeypWA&ust=1479074399499531",
+  image: "http://www.op-base.me/sites/all/themes/clean_theme/images/slide-image-1.jpg?1479060879463",
   // image: "/images/onepieceimg.jpeg",
   dateReleased: "1999",
   stillOnAir: true,

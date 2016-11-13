@@ -30,6 +30,10 @@
             <label for="title">Name</label>
             <input type="text" class="form-control" name="title" placeholder="Anime Name">
           </div>
+          <div class="form-group">
+            <label for="name">Release Date</label>
+            <input type="text" class="form-control" name="date" placeholder="Release Date">
+          </div>
           <button type="submit" class="btn btn-default">Create Anime</button>
         </form>
         <div id='animeTarget'>
@@ -38,8 +42,11 @@
             <hr>
             <p>
               <b>{{name}}</b>
-              <!-- {{image}} -->
+              <br>
+              Release Date: {{dateReleased}}
+              <br>
             <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
+              <br>
             </p>
             {{/each}}
           </script>

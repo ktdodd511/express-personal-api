@@ -64,8 +64,8 @@ app.get('/api/profile', function profile(req, res) {
   res.json({
     name: "Katie",
     favoriteAnime: "HunterXHunter",
-    livesIn: "Oakland",
-    hatesTrump: true,
+    location: "Oakland",
+    hatesTrump: true
 
   });
 });
