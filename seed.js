@@ -34,21 +34,21 @@ var animeList= [
 
   {
   name: "Soul Eater",
-  image: "onepieceimg.jpeg",
+  image: "https://myanimelist.cdn-dena.com/s/common/uploaded_files/1444063749-240dd90d18e9f17827e8155e2c0a1f73.jpeg",
   dateReleased: "2008",
   stillOnAir: false,
 },
 
   {
   name: "Sword Art Online",
-  image: "onepieceimg.jpeg",
+  image: "http://cdn.slashgear.com/wp-content/uploads/2016/02/Sword-art-online-800x420.jpg",
   dateReleased: "2012",
   stillOnAir: false,
 },
 
   {
   name: "Deadman Wonderland",
-  image: "onepieceimg.jpeg",
+  image: "http://i.imgur.com/JU39yaE.png",
   dateReleased: "2011",
   stillOnAir: false,
   }
