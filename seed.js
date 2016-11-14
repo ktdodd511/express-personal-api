@@ -23,7 +23,6 @@ var animeList= [
   // image: "/images/onepieceimg.jpeg",
   dateReleased: "1999",
   stillOnAir: true,
-  // characters: [CharacterSchema]
 },
 
   {
@@ -31,7 +30,6 @@ var animeList= [
   image: "hunterxhunterimg.jpeg",
   dateReleased: "2011",
   stillOnAir: true,
-  // characters: [CharacterSchema]
 },
 
   {
@@ -39,7 +37,6 @@ var animeList= [
   image: "onepieceimg.jpeg",
   dateReleased: "2008",
   stillOnAir: false,
-  // characters: [CharacterSchema]
 },
 
   {
@@ -47,7 +44,6 @@ var animeList= [
   image: "onepieceimg.jpeg",
   dateReleased: "2012",
   stillOnAir: false,
-  // characters: [CharacterSchema]
 },
 
   {
@@ -55,7 +51,6 @@ var animeList= [
   image: "onepieceimg.jpeg",
   dateReleased: "2011",
   stillOnAir: false,
-  // characters: [CharacterSchema]
   }
 
 
@@ -78,4 +73,7 @@ db.Anime.remove({}, function(err, Anime){
       console.log('saved ' + savedAnime.name);
     });
 });
+
+process.exit();
+
 });

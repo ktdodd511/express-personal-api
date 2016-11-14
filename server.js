@@ -105,7 +105,7 @@ app.post('/api/anime', function(req, res) {
     if (err) {
       return console.log("save error: " + err);
     }
-    console.log("saved ", anime.name)
+    console.log("saved ", anime.name);
     res.json(anime);
   });
 });

@@ -11,6 +11,7 @@ $animeList = $('#animeTarget');
 var source = $('#anime-template').html();
 template = Handlebars.compile(source);
 
+
 $.ajax({
   method: 'GET',
   url: '/api/anime',

@@ -22,7 +22,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h1>Anime Shows!</h1>
+          <h1>My Favorite Animes!</h1>
           <h4><a href="/api">Read My API Documentation</a></h4>
         </div>
         <form class="form-inline" id="newAnimeForm">
@@ -41,6 +41,7 @@
             {{#each anime}}
             <hr>
             <p>
+              <img class="image" src="{{image}}">
               <b>{{name}}</b>
               <br>
               Release Date: {{dateReleased}}
